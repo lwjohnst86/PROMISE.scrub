@@ -10,7 +10,7 @@ Authors@R: c(
     )
 Description: This package contains functions, tests, and documentation on scrubbing
     and cleaning the PROMISE dataset. There are several of these packages that work 
-    to get the PROMISE dataset into tidy and reliable format.
+    to get the PROMISE dataset into a tidy and reliable format.
 Depends: R (>= 3.3.1)
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -21,3 +21,11 @@ Suggests: knitr,
 VignetteBuilder: knitr
 URL: https://github.com/lwjohnst86/PROMISE.scrub
 BugReports: https://github.com/lwjohnst86/PROMISE.scrub/issues
+Imports: dplyr,
+    yaml,
+    stats,
+    tidyr,
+    readr,
+    lubridate,
+    assertive,
+    devtools
