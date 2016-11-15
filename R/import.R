@@ -7,8 +7,10 @@
 #' @export
 import_csv <-
     function(file,
-             path = pkg_path('data-raw'),
+             path = NULL,
              skip_lines = 0) {
+        if (is.null(path))
+            path <- getOption('PROMISE.data.raw.path')
         data_file <- file.path(path, file)
         all_files_exist(data_file)
 

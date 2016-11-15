@@ -21,15 +21,6 @@ convert_to_date <- function(variable, from = "%m/%d/%y") {
     converted
 }
 
-#' Path to the PROMISE package.
-#'
-#' @param ... folder names.
-#' @export
-pkg_path <- function(..., package = 'PROMISE') {
-    path <- file.path(...)
-    normalizePath(system.file(path, package = package))
-}
-
 multiple_files <- function(pattern, path) {
     files <-
         list.files(path,
