@@ -21,12 +21,17 @@ convert_to_date <- function(variable, from = "%m/%d/%y") {
     converted
 }
 
+#' Get a vector of files with the full path for a given regular expression.
+#'
+#' @param pattern Regular expression pattern to search for files.
+#' @param path Where to search for the files.
+#'
+#' @export
 multiple_files <- function(pattern, path) {
     files <-
         list.files(path,
                    pattern = pattern,
                    full.names = TRUE)
-    assertive::assert_is_non_empty(files)
     all_files_exist(files)
     files
 }
