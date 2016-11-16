@@ -1,8 +1,8 @@
 .onLoad <- function(libname, pkgname) {
     op <- options()
     op.PROMISE <- list(
-        PROMISE.rename.path = system.file('rename', package = "PROMISE"),
-        PROMISE.data.raw.path = system.file('data-raw', package = "PROMISE")
+        PROMISE.rename.path = tempdir(),
+        PROMISE.data.raw.path = tempdir()
     )
     toset <- !(names(op.PROMISE) %in% names(op))
     if (any(toset))
