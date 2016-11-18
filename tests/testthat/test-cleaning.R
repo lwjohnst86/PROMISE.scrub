@@ -40,4 +40,13 @@ test_that("completely empty rows are dropped", {
     expect_error(drop_empty_rows(data, 'VN'))
 })
 
+test_that("visit count is added", {
 
+
+})
+
+test_that("dates are fixed", {
+    real <- data.frame(date = c("06/12/01", "03/21/12", "12/23/34"))
+    expected <- c("2001-06-12", "2012-03-21", "1934-12-23")
+    expect_identical(as.character(fix_date(real, 'date')[[1]]), expected)
+})
