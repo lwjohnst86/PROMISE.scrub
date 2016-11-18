@@ -25,11 +25,13 @@ URL: https://github.com/lwjohnst86/PROMISE.scrub
 BugReports: https://github.com/lwjohnst86/PROMISE.scrub/issues
 Imports:
     dplyr,
+    plyr,
     yaml,
     stats,
     tidyr,
     readr,
     lubridate,
     assertive,
-    devtools
+    devtools,
+    magrittr
 RoxygenNote: 5.0.1
