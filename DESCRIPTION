@@ -33,5 +33,6 @@ Imports:
     lubridate,
     assertive,
     devtools,
-    magrittr
+    magrittr,
+    utils
 RoxygenNote: 5.0.1
