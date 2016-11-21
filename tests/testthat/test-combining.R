@@ -28,3 +28,17 @@ test_that("combining datasets returns proper number of columns and rows", {
     data <- combine_datasets(data, d3, by_cols = 'id')
     expect_identical(names(data), c('id', 'vn', 'wgt', 'hgt', 'sex'))
 })
+
+test_that("simple joining by SID from list into single dataset", {
+    d1 <- data.frame(
+        SID = 1:16,
+        hgt = sample(150:200, 16, replace = TRUE)
+    )
+    d2 <- data.frame(
+        SID = 1:16,
+        wgt = sample(50:100, 16, replace = TRUE)
+    )
+    data <- join_data_list(list(d1, d2))
+    expect_equal(nrow(data), 16)
+    expect_equal(ncol(data), 3)
+})

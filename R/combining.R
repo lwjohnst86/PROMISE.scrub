@@ -45,3 +45,23 @@ confirm_columns_in_data <- function(data, columns) {
              paste(columns, collapse = ', '))
     }
 }
+
+#' Merge together a list of dataframes by SID into a single dataframe.
+#'
+#' Simpler than the \code{\link{combine_datasets}} function. Only allows for
+#' merging by the variable SID (subject identification number).
+#'
+#' @param data_list List of data.frames
+#' @export
+join_data_list <- function(data_list) {
+    assertive::assert_is_list(data_list)
+    # Use this as the base index for the for loop full_join.
+    output <- data.frame(SID = data_list[[1]]$SID)
+    for (index in 1:length(data_list)) {
+        output <-
+            dplyr::full_join(output,
+                             data_list[[index]],
+                             by = 'SID')
+    }
+    output
+}

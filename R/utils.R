@@ -2,6 +2,11 @@
 #' @importFrom magrittr %>%
 magrittr::`%>%`
 
+#' Convert a date variable into another format (e.g. ISO standard).
+#'
+#' @param variable The date variable.
+#' @param from Original date format.
+#' @export
 convert_to_date <- function(variable, from = "%m/%d/%y") {
     converted <- lubridate::ymd(as.Date(variable, from))
     yr <- lubridate::year(converted) %% 100
@@ -24,19 +29,6 @@ multiple_files <- function(pattern, path) {
                    full.names = TRUE)
     all_files_exist(files)
     files
-}
-
-join_data_list <- function(data_list, by = 'SID') {
-    assertive::assert_is_list(data_list)
-    # Use this as the base index for the for loop full_join.
-    output <- data.frame(SID = data_list[[1]]$SID)
-    for (index in 1:length(data_list)) {
-        output <-
-            dplyr::full_join(output,
-                             data_list[[index]],
-                             by = by)
-    }
-    output
 }
 
 all_files_exist <- function(files) {
