@@ -2,7 +2,6 @@
 #' @importFrom magrittr %>%
 magrittr::`%>%`
 
-
 convert_to_date <- function(variable, from = "%m/%d/%y") {
     converted <- lubridate::ymd(as.Date(variable, from))
     yr <- lubridate::year(converted) %% 100
