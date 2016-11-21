@@ -41,8 +41,18 @@ test_that("completely empty rows are dropped", {
 })
 
 test_that("visit count is added", {
+    data <- data.frame(
+        id = rep(1:4, each = 3),
+        date = as.Date(rep(c('2010-10-01', '2011-10-01', '2012-10-01'), times = 4)),
+        VN = rep(1:3, times = 4)
+    )
 
+    # First three numbers
+    real_visits <- getOption('PROMISE.visit.numbers')[1:3]
 
+    expect_equal(add_visit_count(data[1:2], c('id', 'date'))$VisitCount, rep(1:3, times = 4))
+    expect_equal(add_visit_count(data[1:2], c('id', 'date'))$VN, rep(real_visits, times = 4))
+    expect_equal(add_visit_count(data, c('id', 'date'))$VisitCount, rep(1:3, times = 4))
 })
 
 test_that("dates are fixed", {

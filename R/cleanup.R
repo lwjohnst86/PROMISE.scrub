@@ -15,7 +15,6 @@ extract_vn <- function(data, original_visit = 'Visit') {
 #' @param data Processing data.
 #' @param vars Variable to add visit information by (ie. SID with
 #'   earlier VisitDate would be 1, increasing up as VisitDates increase).
-#' @param original_format The original date format.
 #' @param start_count When to start the counting (ie. if for first visit, it
 #'   would be 1)
 #'
@@ -29,13 +28,13 @@ add_visit_count <- function(data,
         dplyr::arrange_(vars) %>%
         dplyr::group_by_(vars) %>%
         # Substract one to balance out the row_number and start_count
-        dplyr::mutate(VisitCount = dplyr::row_number() - 1 + start_count) %>%
+        dplyr::mutate(VisitCount = row_number() - 1 + start_count) %>%
         dplyr::ungroup()
 
     if (!'VN' %in% names(data)) {
         v_num <- data$VisitCount
         old_nums <- min(v_num):max(v_num)
-        new_nums <- getOptions('PROMISE.visit.numbers')[old_nums]
+        new_nums <- getOption('PROMISE.visit.numbers')[old_nums]
 
         data <- data %>%
             dplyr::mutate(VN = plyr::mapvalues(VisitCount, from = old_nums,
