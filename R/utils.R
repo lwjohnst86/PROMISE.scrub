@@ -2,15 +2,6 @@
 #' @importFrom magrittr %>%
 magrittr::`%>%`
 
-confirm_columns_in_data <- function(data, name, columns, error = stop) {
-    if (!all(columns %in% names(data))) {
-        stop(paste0(
-            name,
-            ' dataset does not have the columns ',
-            paste(columns, collapse = ', ')
-        ))
-    }
-}
 
 convert_to_date <- function(variable, from = "%m/%d/%y") {
     converted <- lubridate::ymd(as.Date(variable, from))
