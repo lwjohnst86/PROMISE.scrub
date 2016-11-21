@@ -30,7 +30,7 @@ import_csv <-
 #' @param path Path to directory where the files are stored.
 #' @export
 import_csv_multiple <- function(pattern, merge_direction = c('rows', 'columns'),
-                                path = pkg_path('data-raw')) {
+                                path = getOption('PROMISE.data.raw.path')) {
     merge_direction <- match.arg(merge_direction)
     files <- multiple_files(pattern, path)
     files <- basename(files)
