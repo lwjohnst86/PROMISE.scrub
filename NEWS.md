@@ -1,4 +1,4 @@
-# PROMISE.scrub 0.0.0.9000
+# PROMISE.scrub 0.0.1
 
 * Added unit tests for the scrubbing functions.
 * Moved many of the scrubbing and cleaning functions from the original PROMISE
