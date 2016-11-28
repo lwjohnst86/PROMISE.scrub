@@ -2,6 +2,7 @@
 
 export("%>%")
 export(add_visit_count)
+export(average_variables)
 export(combine_datasets)
 export(convert_to_date)
 export(drop_empty_rows)
