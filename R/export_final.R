@@ -40,8 +40,8 @@ export_to_rds_file <- function(data, name, path) {
 }
 
 export_as_pkg_data <- function(data) {
-    promise <- data
+    PROMISE <- data
     if (getwd() != system.file(package = 'PROMISE'))
         stop("Please only use this within the PROMISE package.")
-    devtools::use_data(promise, overwrite = TRUE)
+    devtools::use_data(PROMISE, overwrite = TRUE)
 }
