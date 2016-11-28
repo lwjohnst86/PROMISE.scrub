@@ -64,9 +64,15 @@ rename_variables <-
 
         # This drops the '.renamed' part of the new variable names
         new_names <- stats::setNames(new_names, gsub('\\.renamed', '', names(new_names)))
+
+        data <- remove_spaces_in_colnames(data)
         names(data) <- new_names[names(data)]
         data
     }
+
+remove_spaces_in_colnames <- function(data) {
+    stats::setNames(data, gsub(" +", "", names(data)))
+}
 
 #' Drop the variables named 'NA' from the raw dataset.
 #'
