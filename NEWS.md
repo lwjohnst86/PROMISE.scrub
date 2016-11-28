@@ -1,4 +1,8 @@
-# PROMISE.scrub 0.0.1.9000
+# PROMISE.scrub 0.0.2
+
+* Added `average_variables` function to average out variables with multiple
+measurements.
+* Spaces removed from column names when renaming them.
 
 # PROMISE.scrub 0.0.1
 
