@@ -1,0 +1,26 @@
+image: r-base:latest
+
+before_script:
+    - apt-get update -qq
+    - apt-get install -y --no-install-recommends libcurl4-openssl-dev libssh2-1-dev libssl-dev git libxml2-dev
+    - apt-get install -y --no-install-recommends qpdf pandoc pandoc-citeproc
+    - Rscript -e 'install.packages(c("devtools", "roxygen2"))'
+    - Rscript -e 'devtools::install_github("hadley/pkgdown")'
+
+test:
+    script:
+        - Rscript -e 'devtools::install_dev_deps()'
+        - Rscript -e 'devtools::check()'
+    tags:
+        - docker
+
+pages:
+    stage: deploy
+    script:
+        - Rscript -e "pkgdown::build_site('.')"
+        - mv docs public
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
