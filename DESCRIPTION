@@ -12,7 +12,7 @@ Description: This package contains functions, tests, and documentation on
     scrubbing and cleaning the PROMISE dataset. There are several of these packages
     that work to get the PROMISE dataset into a tidy and reliable format.
 Depends:
-    R (>= 3.3.1)
+    R (>= 3.4.1)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -21,8 +21,8 @@ Suggests:
     rmarkdown,
     testthat
 VignetteBuilder: knitr
-URL: https://github.com/lwjohnst86/PROMISE.scrub
-BugReports: https://github.com/lwjohnst86/PROMISE.scrub/issues
+URL: https://gitlab.com/promise-cohort/PROMISE.scrub
+BugReports: https://gitlab.com/promise-cohort/PROMISE.scrub/issues
 Imports:
     dplyr,
     plyr,
@@ -35,4 +35,4 @@ Imports:
     devtools,
     magrittr,
     utils
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
