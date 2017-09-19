@@ -1,6 +1,8 @@
 # PROMISE.scrub
 
 [![Travis-CI Build Status](https://travis-ci.org/lwjohnst86/PROMISE.scrub.svg?branch=master)](https://travis-ci.org/lwjohnst86/PROMISE.scrub)
+[![GitLab pipeline status](https://gitlab.com/promise-cohort/PROMISE.scrub/badges/master/pipeline.svg)](https://gitlab.com/promise-cohort/PROMISE.scrub/commits/master)
+[![GitLab coverage report](https://gitlab.com/promise-cohort/PROMISE.scrub/badges/master/coverage.svg)](https://gitlab.com/promise-cohort/PROMISE.scrub/commits/master)
 
 The goal of PROMISE.scrub is to provide functions that help with cleaning and
 preparing the PROMISE dataset for eventual use in analyses and research
