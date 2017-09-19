@@ -14,4 +14,3 @@ multiple_files(pattern, path)
 \description{
 Get a vector of files with the full path for a given regular expression.
 }
-

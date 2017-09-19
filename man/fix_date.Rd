@@ -21,4 +21,3 @@ Fix with with any date variable.
 To see the different options for date formats, see
   \code{\link[base]{strptime}}.
 }
-

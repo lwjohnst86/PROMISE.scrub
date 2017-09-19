@@ -16,4 +16,3 @@ extract_vn(data, original_visit = "Visit")
 Extract the VN information from the Visit column (e.g. that has the data as
 'yr3', or 'YR6', or 'y1', etc.).
 }
-

@@ -16,4 +16,3 @@ combine_datasets(..., by_cols = c("SID", "VN"))
 Combine multiple datasets together into one, merged dataset. Merges based on
 SID and VN columns.
 }
-

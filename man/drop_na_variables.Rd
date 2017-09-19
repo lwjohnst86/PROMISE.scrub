@@ -12,4 +12,3 @@ drop_na_variables(data)
 \description{
 Drop the variables named 'NA' from the raw dataset.
 }
-

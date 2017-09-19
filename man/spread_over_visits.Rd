@@ -14,4 +14,3 @@ spread_over_visits(data, column)
 \description{
 Spread a variable values from one visit date to the next.
 }
-

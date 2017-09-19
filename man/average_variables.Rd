@@ -14,4 +14,3 @@ average_variables(data, var_pattern)
 \description{
 Average variables that have two or more measurements.
 }
-

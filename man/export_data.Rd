@@ -20,4 +20,3 @@ extensions).}
 \description{
 Export a dataset into another format (Rds, csv, or as a package dataset).
 }
-

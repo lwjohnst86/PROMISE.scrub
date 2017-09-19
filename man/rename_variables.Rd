@@ -16,4 +16,3 @@ rename_variables(data, yaml_file, path = NULL)
 \description{
 Rename the raw dataset variable names based on the yaml files.
 }
-

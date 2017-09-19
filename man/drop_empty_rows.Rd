@@ -16,4 +16,3 @@ drop_empty_rows(data, col_nums)
 \description{
 Drops rows that are completely empty (excluding SID, etc).
 }
-

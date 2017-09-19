@@ -18,4 +18,3 @@ would be 1)}
 \description{
 Add a visit counter to the raw data file.
 }
-

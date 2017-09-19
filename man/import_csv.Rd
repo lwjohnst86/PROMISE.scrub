@@ -17,4 +17,3 @@ import_csv(file, path = NULL, skip_lines = 0)
 \description{
 General function; import raw csv datafile into R.
 }
-

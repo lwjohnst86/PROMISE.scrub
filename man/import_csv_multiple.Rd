@@ -23,4 +23,3 @@ General function; imports multiple raw data
 files based on a pattern, only used for data of the same type (e.g. 'ogtt' or
 'fattyacids').
 }
-

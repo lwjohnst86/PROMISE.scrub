@@ -14,4 +14,3 @@ convert_to_date(variable, from = "\%m/\%d/\%y")
 \description{
 Convert a date variable into another format (e.g. ISO standard).
 }
-

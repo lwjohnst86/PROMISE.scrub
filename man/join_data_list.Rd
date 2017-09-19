@@ -13,4 +13,3 @@ join_data_list(data_list)
 Simpler than the \code{\link{combine_datasets}} function. Only allows for
 merging by the variable SID (subject identification number).
 }
-
