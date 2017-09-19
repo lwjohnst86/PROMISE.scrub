@@ -1,6 +1,6 @@
 #' @export
 #' @importFrom magrittr %>%
-magrittr::`%>%`
+`%>%` <- magrittr::`%>%`
 
 #' Convert a date variable into another format (e.g. ISO standard).
 #'
