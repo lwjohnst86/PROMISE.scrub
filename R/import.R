@@ -36,7 +36,7 @@ import_csv_multiple <- function(pattern, merge_direction = c('rows', 'columns'),
 
     switch(merge_direction,
            rows = {
-               dplyr::bind_rows(lapply(files, import_csv, path = path))
+               purrr::map_dfr(files, import_csv, path = path)
            },
            columns = {
                data <- lapply(files, import_csv, path = path)
