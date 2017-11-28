@@ -19,29 +19,29 @@ extract_vn <- function(data, original_visit = 'Visit') {
 #'   would be 1)
 #'
 #' @export
-add_visit_count <- function(data,
+add_visit_count <- function(.data,
                             vars = c('SID', 'VisitDate'),
                             start_count = 1) {
 
     # Add visit count
-    data <- data %>%
+    .data <- .data %>%
         dplyr::arrange_(vars) %>%
         dplyr::group_by_(vars) %>%
         # Substract one to balance out the row_number and start_count
         dplyr::mutate(VisitCount = row_number() - 1 + start_count) %>%
         dplyr::ungroup()
 
-    if (!'VN' %in% names(data)) {
-        v_num <- data$VisitCount
+    if (!'VN' %in% names(.data)) {
+        v_num <- .data$VisitCount
         old_nums <- min(v_num):max(v_num)
         new_nums <- getOption('PROMISE.visit.numbers')[old_nums]
 
-        data <- data %>%
-            dplyr::mutate(VN = plyr::mapvalues(VisitCount, from = old_nums,
-                                               to = new_nums))
+        .data["VN"] <-
+            plyr::mapvalues(v_num, from = old_nums,
+                            to = new_nums)
     }
 
-    data
+    .data
 }
 
 #' Rename the raw dataset variable names based on the yaml files.
