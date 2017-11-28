@@ -1,7 +1,7 @@
 #' General function; import raw csv datafile into R.
 #'
 #' @param file The name of the raw csv datafile that is found in the
-#'   \code{data-raw/} folder.
+#'   `data-raw/` folder.
 #' @param path Path to file.
 #' @param skip_lines Whether to skip n lines when importing the csv file.
 #' @export
@@ -12,7 +12,6 @@ import_csv <-
         if (is.null(path))
             path <- getOption('PROMISE.data.raw.path')
         data_file <- file.path(path, file)
-        all_files_exist(data_file)
 
         readr::read_csv(data_file,
                         na = c('NA', '', '.'),
