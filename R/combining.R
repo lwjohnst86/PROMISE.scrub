@@ -60,8 +60,7 @@ join_data_list <- function(data_list) {
     for (index in 1:length(data_list)) {
         output <-
             dplyr::full_join(output,
-                             data_list[[index]],
-                             by = 'SID')
+                             data_list[[index]])
     }
     output
 }
