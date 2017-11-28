@@ -1,3 +1,9 @@
+# PROMISE.scrub 0.0.3
+
+* Added function to remove duplicates (`scr_duplicates`).
+* Added code coverage.
+* Added website infrastructure
+
 # PROMISE.scrub 0.0.2
 
 * Added `average_variables` function to average out variables with multiple
