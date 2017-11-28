@@ -19,10 +19,12 @@ LazyData: true
 Suggests:
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    covr
 VignetteBuilder: knitr
-URL: https://gitlab.com/promise-cohort/PROMISE.scrub
-BugReports: https://gitlab.com/promise-cohort/PROMISE.scrub/issues
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/lwjohnst86/PROMISE.scrub
+BugReports: https://github.com/lwjohnst86/PROMISE.scrub/issues
 Imports:
     dplyr,
     plyr,
@@ -34,5 +36,6 @@ Imports:
     assertive,
     devtools,
     magrittr,
-    utils
+    utils,
+    purrr
 RoxygenNote: 6.0.1
