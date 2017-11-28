@@ -1,18 +1,18 @@
 #' Average variables that have two or more measurements.
 #'
-#' @param data The scrubbing dataset.
-#' @param var_pattern Regular expression pattern to search for variable names.
+#' @param .data Dataframe to scrub.
+#' @param .pattern Regular expression pattern to search for variable names.
 #' @export
-average_variables <- function(data, var_pattern) {
-    data %>%
-        dplyr::select(SID, VN, dplyr::matches(var_pattern)) %>%
-        tidyr::gather(Measure, Value, -SID, -VN) %>%
-        dplyr::mutate(Measure = gsub('\\d$', '', Measure)) %>%
+average_variables <- function(.data, .pattern) {
+    .data %>%
+        dplyr::select_at(dplyr::vars("SID", "VN", dplyr::matches(.pattern))) %>%
+        tidyr::gather("Measure", "Value", -SID, -VN) %>%
+        dplyr::mutate_at("Measure", ~ gsub('\\d$', '', .)) %>%
         stats::na.omit() %>%
-        dplyr::group_by(SID, VN, Measure) %>%
-        dplyr::summarise(Mean = mean(Value)) %>%
-        tidyr::spread(Measure, Mean) %>%
-        dplyr::full_join(dplyr::select(data, -dplyr::matches(var_pattern)),
+        dplyr::group_by_at(c("SID", "VN", "Measure")) %>%
+        dplyr::summarise_at("Value", mean) %>%
+        tidyr::spread("Measure", "Value") %>%
+        dplyr::full_join(dplyr::select(.data, -dplyr::matches(.pattern)),
                          by = c('SID', 'VN')) %>%
         dplyr::ungroup()
 }
