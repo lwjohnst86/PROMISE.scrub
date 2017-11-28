@@ -60,3 +60,16 @@ test_that("dates are fixed", {
     expected <- c("2001-06-12", "2012-03-21", "1934-12-23")
     expect_identical(as.character(fix_date(real, 'date')[[1]]), expected)
 })
+
+test_that("duplicates removed", {
+    dups <- data.frame(a = c(rep(1, 3), rep(2, 3), rep(3, 3)),
+                       b = c(1:3, 1, 1, 2, 1, 2, 2),
+                       id = 1:9)
+    no_dups_1 <- scr_duplicates(dups, c("a", "b"), "keepfirst")
+    expect_equal(nrow(dups) - 2, nrow(no_dups_1))
+    expect_equal(no_dups_1$id, c(1:4, 6:8))
+
+    no_dups_2 <- scr_duplicates(dups, c("a", "b"), "keeplast")
+    expect_equal(nrow(dups) - 2, nrow(no_dups_2))
+    expect_equal(no_dups_2$id, c(1:3, 5:7, 9))
+})
