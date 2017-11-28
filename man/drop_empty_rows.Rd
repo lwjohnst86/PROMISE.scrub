@@ -4,10 +4,10 @@
 \alias{drop_empty_rows}
 \title{Drops rows that are completely empty (excluding SID, etc).}
 \usage{
-drop_empty_rows(data, col_nums)
+drop_empty_rows(.data, col_nums)
 }
 \arguments{
-\item{data}{The processing dataset.}
+\item{.data}{The processing dataset.}
 
 \item{col_nums}{Numeric value for the columns to exclude or include (e.g.
 -1:-2 to exclude the first two columns, or 3:10 to include columns 3 to

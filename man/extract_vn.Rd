@@ -5,10 +5,10 @@
 \title{Extract the VN information from the Visit column (e.g. that has the data as
 'yr3', or 'YR6', or 'y1', etc.).}
 \usage{
-extract_vn(data, original_visit = "Visit")
+extract_vn(.data, original_visit = "Visit")
 }
 \arguments{
-\item{data}{Processing data.}
+\item{.data}{Processing data.}
 
 \item{original_visit}{Visit date variable to extract the VN from.}
 }

@@ -4,10 +4,10 @@
 \alias{drop_na_variables}
 \title{Drop the variables named 'NA' from the raw dataset.}
 \usage{
-drop_na_variables(data)
+drop_na_variables(.data)
 }
 \arguments{
-\item{data}{The processing dataset.}
+\item{.data}{The processing dataset.}
 }
 \description{
 Drop the variables named 'NA' from the raw dataset.

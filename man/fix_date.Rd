@@ -4,10 +4,10 @@
 \alias{fix_date}
 \title{Fix with with any date variable.}
 \usage{
-fix_date(data, date_var, original_format = "\%m/\%d/\%y")
+fix_date(.data, date_var, original_format = "\%m/\%d/\%y")
 }
 \arguments{
-\item{data}{The processing dataset.}
+\item{.data}{The processing dataset.}
 
 \item{date_var}{The date variable found in the dataset.}
 

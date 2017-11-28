@@ -4,12 +4,12 @@
 \alias{average_variables}
 \title{Average variables that have two or more measurements.}
 \usage{
-average_variables(data, var_pattern)
+average_variables(.data, .pattern)
 }
 \arguments{
-\item{data}{The scrubbing dataset.}
+\item{.data}{Dataframe to scrub.}
 
-\item{var_pattern}{Regular expression pattern to search for variable names.}
+\item{.pattern}{Regular expression pattern to search for variable names.}
 }
 \description{
 Average variables that have two or more measurements.

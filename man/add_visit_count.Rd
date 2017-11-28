@@ -4,10 +4,10 @@
 \alias{add_visit_count}
 \title{Add a visit counter to the raw data file.}
 \usage{
-add_visit_count(data, vars = c("SID", "VisitDate"), start_count = 1)
+add_visit_count(.data, vars = c("SID", "VisitDate"), start_count = 1)
 }
 \arguments{
-\item{data}{Processing data.}
+\item{.data}{Processing data.}
 
 \item{vars}{Variable to add visit information by (ie. SID with
 earlier VisitDate would be 1, increasing up as VisitDates increase).}

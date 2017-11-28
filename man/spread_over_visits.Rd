@@ -4,10 +4,10 @@
 \alias{spread_over_visits}
 \title{Spread a variable values from one visit date to the next.}
 \usage{
-spread_over_visits(data, column)
+spread_over_visits(.data, column)
 }
 \arguments{
-\item{data}{The processing dataset.}
+\item{.data}{The processing dataset.}
 
 \item{column}{Variables to spread values across over the visits.}
 }

@@ -4,10 +4,10 @@
 \alias{rename_variables}
 \title{Rename the raw dataset variable names based on the yaml files.}
 \usage{
-rename_variables(data, yaml_file, path = NULL)
+rename_variables(.data, yaml_file, path = NULL)
 }
 \arguments{
-\item{data}{The processing dataset.}
+\item{.data}{The processing dataset.}
 
 \item{yaml_file}{The yaml renaming files in the \code{inst/rename/} folder.}
 
