@@ -12,13 +12,13 @@ export_data <-
              type = c('Rds', 'csv', 'pkg'),
              path = getOption('PROMISE.extdata.path')) {
         type <- match.arg(type)
-        if (type != 'pkg' & path == system.file('extdata', package = 'PROMISE'))
+        if (type != 'pkg' & path == system.file('extdata', package = 'PROMISE.data'))
             stop('Please provide a file path to export the dataset, not the default. ',
                  'I recommend the "." path (working directory).')
 
         if (name == '.' & type != 'pkg')
             stop("Please don't use this in a %>% pipe chain. ",
-                 "For instance, use as export_final(PROMISE_data).")
+                 "For instance, use as export_data(PROMISE).")
 
         switch(
             type,
@@ -28,6 +28,7 @@ export_data <-
         )
     }
 
+# TODO: Remove this.
 export_to_csv_file <- function(data, name, path) {
     utils::write.csv(data,
                      file.path(path, paste0(name, '.csv')),
@@ -41,7 +42,7 @@ export_to_rds_file <- function(data, name, path) {
 
 export_as_pkg_data <- function(data) {
     PROMISE <- data
-    if (getwd() != system.file(package = 'PROMISE'))
-        stop("Please only use this within the PROMISE package.")
+    if (getwd() != system.file(package = 'PROMISE.data'))
+        stop("Please only use this within the PROMISE.data package.")
     devtools::use_data(PROMISE, overwrite = TRUE)
 }
