@@ -22,7 +22,7 @@
 scr_duplicates <- function(.data,
                            .variables,
                            action = c('keeplast', 'keepfirst')) {
-
+    action <- match.arg(action)
     switch(
         action,
         keeplast = {
