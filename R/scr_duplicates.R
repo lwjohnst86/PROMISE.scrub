@@ -23,16 +23,16 @@ scr_duplicates <- function(.data,
                            .variables,
                            action = c('keeplast', 'keepfirst')) {
 
-    action <- match.arg(action)
-
     switch(
         action,
         keeplast = {
-            output <- .data[!duplicated(.data[.variables], fromLast = TRUE), ]
+            dups <- !duplicated(.data[.variables], fromLast = TRUE)
+            output <- dplyr::filter(.data, dups)
             message('... Removed first duplicate.')
         },
         keepfirst = {
-            output <- .data[!duplicated(.data[.variables]), ]
+            dups <- !duplicated(.data[.variables])
+            output <- dplyr::filter(.data, dups)
             message('... Removed last duplicate.')
         }
     )
