@@ -119,6 +119,5 @@ spread_over_visits <- function(.data, column) {
 #'
 #' @export
 fix_date <- function(.data, date_var, original_format = '%m/%d/%y') {
-    .data[date_var] <- convert_to_date(.data[[date_var]], from = original_format)
-    .data
+    dplyr::mutate_at(.data, date_var, convert_to_date, from = original_format)
 }
