@@ -18,6 +18,7 @@ combine_datasets <- function(..., by_cols = c('SID', 'VN')) {
                 ' datasets to combine. Combining them together.')
         combined <- data_list[[1]]
         confirm_columns_in_data(combined, by_cols)
+        # TODO: use purrr::reduce instead?
         for (index in 2:ds_num) {
             confirm_columns_in_data(data_list[[index]], by_cols)
             combined <- dplyr::full_join(
@@ -57,6 +58,7 @@ join_data_list <- function(data_list) {
     assertive::assert_is_list(data_list)
     # Use this as the base index for the for loop full_join.
     output <- data.frame(SID = data_list[[1]]$SID)
+    # TODO: use purrr::reduce instead?
     for (index in 1:length(data_list)) {
         output <-
             dplyr::full_join(output,
