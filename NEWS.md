@@ -1,3 +1,9 @@
+# PROMISE.scrub 0.0.4
+
+## Hotfix
+
+* Fix a bug in the `combine_datasets` that silently dropped duplicate columns.
+
 # PROMISE.scrub 0.0.3
 
 * Added function to remove duplicates (`scr_duplicates`).
