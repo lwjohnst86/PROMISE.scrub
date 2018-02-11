@@ -42,3 +42,16 @@ test_that("simple joining by SID from list into single dataset", {
     expect_equal(nrow(data), 16)
     expect_equal(ncol(data), 3)
 })
+
+test_that("duplicate columns warning", {
+    d1 <- data.frame(
+        SID = 1:16,
+        hgt = sample(150:200, 16, replace = TRUE),
+        wgt = 1:16
+    )
+    d2 <- data.frame(
+        SID = 1:16,
+        wgt = sample(50:100, 16, replace = TRUE)
+    )
+    expect_warning(combine_datasets(d1, d2, by_cols = "SID"))
+})
