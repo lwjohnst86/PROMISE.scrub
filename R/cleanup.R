@@ -80,7 +80,8 @@ remove_spaces_in_colnames <- function(.data) {
 #'
 #' @export
 drop_na_variables <- function(.data) {
-    .data[!grepl('NA', names(.data))]
+    .data <- .data[!grepl('NA', names(.data))]
+    .data[!is.na(names(.data))]
 }
 
 #' Drops rows that are completely empty (excluding SID, etc).
