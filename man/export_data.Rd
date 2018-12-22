@@ -4,8 +4,8 @@
 \alias{export_data}
 \title{Export a dataset into another format (Rds, csv, or as a package dataset).}
 \usage{
-export_data(data, name = deparse(substitute(data)), type = c("Rds", "csv",
-  "pkg"), path = getOption("PROMISE.extdata.path"))
+export_data(data, name = deparse(substitute(data)), type = c("Rds",
+  "csv", "pkg"), path = getOption("PROMISE.extdata.path"))
 }
 \arguments{
 \item{data}{The dataset.}

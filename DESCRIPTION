@@ -1,6 +1,6 @@
 Package: PROMISE.scrub
 Title: Scrub the PROMISE dataset
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
     person("Luke", "Johnston", email = "lwjohnst@gmail.com", role = c('aut', 'cre')),
     person("Ingrid", "Santaren", role = c('ctb')),
@@ -11,8 +11,6 @@ Authors@R: c(
 Description: This package contains functions, tests, and documentation on
     scrubbing and cleaning the PROMISE dataset. There are several of these packages
     that work to get the PROMISE dataset into a tidy and reliable format.
-Depends:
-    R (>= 3.4.1)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -38,4 +36,4 @@ Imports:
     magrittr,
     utils,
     purrr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1

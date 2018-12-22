@@ -1,3 +1,9 @@
+# PROMISE.scrub 0.0.5
+
+## Bug fixes
+
+* Minor fixes and updates based on newer versions of dependency packages.
+
 # PROMISE.scrub 0.0.4
 
 ## Hotfix
