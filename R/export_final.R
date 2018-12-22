@@ -44,5 +44,5 @@ export_as_pkg_data <- function(data) {
     PROMISE <- data
     if (getwd() != system.file(package = 'PROMISE.data'))
         stop("Please only use this within the PROMISE.data package.")
-    devtools::use_data(PROMISE, overwrite = TRUE)
+    usethis::use_data(PROMISE, overwrite = TRUE)
 }
