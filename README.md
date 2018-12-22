@@ -1,4 +1,4 @@
-# PROMISE.scrub
+# PROMISE.scrub <img src="man/figures/logo.png" align="right" height=140/>
 
 [![Travis-CI Build Status](https://travis-ci.org/lwjohnst86/PROMISE.scrub.svg?branch=master)](https://travis-ci.org/lwjohnst86/PROMISE.scrub)
 [![Coverage Status](https://img.shields.io/codecov/c/github/lwjohnst86/PROMISE.scrub/master.svg)](https://codecov.io/github/lwjohnst86/PROMISE.scrub?branch=master)
