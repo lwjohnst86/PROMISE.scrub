@@ -28,7 +28,7 @@ add_visit_count <- function(.data,
         dplyr::arrange_(vars) %>%
         dplyr::group_by_(vars) %>%
         # Substract one to balance out the row_number and start_count
-        dplyr::mutate(VisitCount = row_number() - 1 + start_count) %>%
+        dplyr::mutate(VisitCount = dplyr::row_number() - 1 + start_count) %>%
         dplyr::ungroup()
 
     if (!'VN' %in% names(.data)) {
