@@ -6,7 +6,7 @@
 average_variables <- function(.data, .pattern) {
     .data %>%
         dplyr::select_at(dplyr::vars("SID", "VN", dplyr::matches(.pattern))) %>%
-        tidyr::gather("Measure", "Value", -SID, -VN) %>%
+        tidyr::gather("Measure", "Value", -dplyr::matches("^SID$"), -dplyr::matches("^VN$")) %>%
         dplyr::mutate_at("Measure", ~ gsub('\\d$', '', .)) %>%
         stats::na.omit() %>%
         dplyr::group_by_at(c("SID", "VN", "Measure")) %>%
