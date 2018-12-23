@@ -35,5 +35,6 @@ Imports:
     devtools,
     magrittr,
     utils,
-    purrr
+    purrr,
+    usethis
 RoxygenNote: 6.1.1
